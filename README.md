@@ -16,7 +16,7 @@
 
 1. https://hqlik.herokuapp.com/quality **(post)**
 
-#### Res.json(data)
+#### Req.json()
 
 ```
 {
@@ -26,7 +26,7 @@
 }
  ```
  
- 
+ #### Res.json(data)
  
 ```
 {
