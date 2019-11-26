@@ -2,18 +2,18 @@
 
 class qualityController {
   index(req, res) {
-    const { columns } = req.body;
+    const { table, temp, columns, activityFrom, activityStore, from, store } = req.body;
 
-    const descriptive = columns.split(",")
+    let descriptive = columns.split(",")
     .map(r => `IF(ISNULL(${r.trim()}) OR LEN(TRIM(${r.trim()})) = 0, '*NÃO PREENCHIDO*', TRIM(${r.trim()})) as ${r.trim()}`)
     .join(",");
 
-    var countColumns = columns.split(",").length;
-    var arr = {
-      "details":[]
-    };
-    var words = [];
-    var repetitions = [];
+    let countColumns = columns.split(",").length,
+        words = [],
+        repetitions = [],
+        arr = {
+          "details":[]
+        };;
     
     columns.split(",").map(( word, index)=>{
       const search = words.findIndex(r => r === word);
@@ -30,6 +30,14 @@ class qualityController {
         console.warn('This column already exist');
       }
     });
+    
+    let TMP = temp ===1 ? 'TMP' : '',
+        head = `[${table} ${TMP}] LOAD `,
+        footer = temp ===1 ? 
+          ` FROM [${from}/${activityFrom}/${table}.qvd](qvd);` : 
+          ` FROM [${from}/${activityFrom}/${table}.qvd](qvd); STORE [${table}] INTO [${from}/${activityStore}/${table}.qvd](qvd);`;
+    
+    descriptive = head + descriptive + footer;
 
       return res.json({
         countColumns,   

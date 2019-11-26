@@ -19,11 +19,13 @@
 #### Req.json()
 
 ```
-{
-	"table":"",
+  "table":"TableA",
+	"temp": 1,
 	"columns":"CODMOVIMENTO,CODPEDIDOWEB  ,TIPOMOVIMENTO",
-	"destination path":""
-}
+	"activityFrom":"Extração",
+	"activityStore":"HQ",
+	"from":"lib://DataSource",
+	"store":"lib://DataSource"
  ```
  
  #### Res.json(data)
