@@ -15,7 +15,7 @@ class qualityController {
     var words = [];
     var repetitions = [];
     
-    columns.split(",").map((word,index)=>{
+    columns.split(",").map(( word, index)=>{
       const search = words.findIndex(r => r === word);
       if(search === -1) {
         let descriptive =`IF(ISNULL(${word.trim()}) OR LEN(TRIM(${word.trim()})) = 0, '*NÃO PREENCHIDO*', TRIM(${word.trim()})) as ${word.trim()}`; 
