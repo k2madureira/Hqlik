@@ -12,9 +12,18 @@
 
 #### Exemple:
 
-* Using Heroku
+*To perform local testing, you need to install the programs:
+* **Nodejs**,
+* **npm**,
+* **Yarn**.
 
-1. https://hqlik.herokuapp.com/quality **(post)**
+*After the programs are installed, you must run the following commands from your terminal:
+* **yarn install**,
+* **yarn dev**.
+
+*To perform a test it is recommended to use the **insomnia** program
+
+1. Using Heroku : ( https://hqlik.herokuapp.com/quality ) **(post)**
 
 #### Req.json()
 
