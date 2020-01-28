@@ -32,7 +32,7 @@ class qualityController {
     });
     
     let TMP = temp ===1 ? 'TMP' : '',
-        head = `[${table} ${TMP}] LOAD `,
+        head = `[${table}${TMP}] LOAD `,
         footer = temp ===1 ? 
           ` FROM [${from}/${activityFrom}/${table}.qvd](qvd);` : 
           ` FROM [${from}/${activityFrom}/${table}.qvd](qvd); STORE [${table}] INTO [${from}/${activityStore}/${table}.qvd](qvd);`;
