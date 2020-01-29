@@ -13,7 +13,7 @@ class qualityController {
         repetitions = [],
         arr = {
           "details":[]
-        };;
+        };
     
     columns.split(",").map(( word, index)=>{
       const search = words.findIndex(r => r === word);
@@ -34,8 +34,9 @@ class qualityController {
     let TMP = temp ===1 ? 'TMP' : '',
         head = `[${table}${TMP}] LOAD `,
         footer = temp ===1 ? 
-          ` FROM [${from}/${activityFrom}/${table}.qvd](qvd);` : 
-          ` FROM [${from}/${activityFrom}/${table}.qvd](qvd); STORE [${table}] INTO [${from}/${activityStore}/${table}.qvd](qvd);`;
+          ` FROM [${from}/${activityFrom}/${table}.qvd](qvd); DROP TABLE [${table}]` : 
+          ` FROM [${from}/${activityFrom}/${table}.qvd](qvd); STORE [${table}] INTO [${from}/${activityStore}/${table}.qvd](qvd); DROP TABLE [${table}]`;
+    
     
     descriptive = head + descriptive + footer;
 
