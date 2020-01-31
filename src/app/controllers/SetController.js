@@ -1,6 +1,6 @@
 const SetAnalysis = require('./../schemas/Setanalysis');
 
-class setController {
+class SetController {
 
   async store(req, res) {
     const { name, functionality, code } = req.body;
@@ -17,4 +17,4 @@ class setController {
 
 }
 
-module.exports = new setController();
+module.exports = new SetController();

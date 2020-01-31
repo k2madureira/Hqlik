@@ -1,10 +1,13 @@
 const express = require('express');
 const routes = express.Router();
 
-const qualityController = require('./app/controllers/qualityController');
-const setController = require('./app/controllers/setController');
+const QualityController = require('./app/controllers/QualityController');
+const SetController = require('./app/controllers/SetController');
+const UserController = require('./app/controllers/UserController');
 
-routes.post('/quality', qualityController.index);
-routes.post('/set', setController.store);
+routes.post('/quality', QualityController.index);
+routes.post('/set', SetController.store);
+
+routes.post('/users', UserController.store);
 
 module.exports = routes;

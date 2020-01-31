@@ -1,4 +1,3 @@
-'use strict';
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -26,7 +25,7 @@ module.exports = {
     
   },
 
-  down: (queryInterface) => {
+  down: queryInterface => {
  
     return queryInterface.dropTable('projects');
     

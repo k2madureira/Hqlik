@@ -1,6 +1,6 @@
 
 
-class qualityController {
+class QualityController {
   index(req, res) {
     const { table, temp, columns, activityFrom, activityStore, from, store } = req.body;
 
@@ -27,7 +27,6 @@ class qualityController {
         arr.details.push(obj);
       } else {
         repetitions.push(word);
-        console.warn('This column already exist');
       }
     });
     
@@ -50,4 +49,4 @@ class qualityController {
 
 }
 
-module.exports = new qualityController();
+module.exports = new QualityController();
